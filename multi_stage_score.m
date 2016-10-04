@@ -12,18 +12,18 @@
 function multi_stage_score(N,path_to_score,in_file,out_file,Max_size,Min_size,Max_iter,M)
 %	N             : Number of first split, must be integer, and larger than 1
 %	path_to_score : specify the path to the folder containing SCORE program, 
-%                   ***only matlab version of SCORE supported at the moment***
+%                       ***only matlab version of SCORE supported at the moment***
 %	in_file       : specify the path to input edge file, the input file can be 2/3 columns
-%					representing unweighted/weighted networks
+%			representing unweighted/weighted networks
 %	out_file      :	specify the path to output file,
-%                   this program produces the community with only node id
-%				    the form of the output file as follows:
-%					community_id	strength	node_ids
-%				    where the strength is always 0.5, as SCORE do not model the strength
+%                       this program produces the community with only node id
+%			the form of the output file as follows:
+%			community_id	strength	node_ids
+%			where the strength is always 0.5, as SCORE do not model the strength
 %	Max_size      :	largest community allowed
 %	Min_size      : smallest community allowed
 %	Max_iter      : Despite anything, we only split the whole data Max_iter rounds, 
-%                   even if at the end of Max_iter there are still super big clusters
+%                       even if at the end of Max_iter there are still super big clusters
 %	M             : Number of split from the second round.
 	addpath(path_to_score); % where the score.m is.
 	edge_input      = load(in_file); % loading edges
